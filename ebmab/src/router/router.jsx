@@ -12,23 +12,23 @@ const router = createBrowserRouter([
         element: <LandingPage />
     },
     {
-        path: '/projects',
+        path: '/projekt',
         element: <ProjectPage />
     },
     {
-        path: '/projects/edit',
+        path: '/projekt/redigera',
         element: <EditProjectPage />
     },
     {
-        path: '/about',
+        path: '/om-oss',
         element: <AboutPage />
     },
     {
-        path: '/contact',
+        path: '/kontakt',
         element: <ContactPage />
     },
     {
-        path: '/login',
+        path: '/logga-in',
         element: <LoginPage />
     },
     {

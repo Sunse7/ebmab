@@ -1,1 +1,23 @@
 // TODO add margins, gap, paddings and mixins here
+
+/* PADDING, MARGIN, GAP */
+$base: 16px;
+
+$padding-massiv: calc($base * 4);
+$padding-huge: calc($base * 2);
+$padding-large: calc($base * 1.5);
+$padding: $base;
+$padding-sml: calc($base / 2);
+$padding-nano: calc($base / 4);
+
+$margin-huge: calc($base * 2);
+$margin-large: calc($base * 1.5);
+$margin: $base;
+$margin-sml: calc($base / 2);
+$margin-nano: calc($base / 4);
+
+$gap-huge: calc($base * 2);
+$gap-large: calc($base * 1.5);
+$gap: $base;
+$gap-sml: calc($base / 2);
+$gap-nano: calc($base / 4);

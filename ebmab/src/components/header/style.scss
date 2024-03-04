@@ -1,0 +1,29 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.header {
+    background-color: $primaryDark;
+    padding: $padding-huge $padding-massiv;
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        &--logo {
+
+        }
+
+        &--links-container {
+            @include navigationFont;
+            color: $white;
+            display: flex;
+            gap: $gap-huge;
+            a.active {
+                border-bottom: 2px solid $secondaryOrange;
+            }
+        }
+    }
+}
