@@ -1,0 +1,23 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.contact {
+    @include subtitleFont;
+    text-shadow: $shadow;
+    color: $white;
+    background: url('./concrete.jpg') center/cover, rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: $gap-huge;
+    padding: $padding-massive;
+    h2 {
+        @include titleFont;
+    }
+    &__phone, &__visit, &__mail {
+        display: flex;
+        align-items: center;
+        gap: $gap-huge;
+    }
+}
