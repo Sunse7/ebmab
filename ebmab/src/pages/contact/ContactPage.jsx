@@ -1,5 +1,10 @@
+import { Header } from "../../components/header/Header";
+
 export function ContactPage() {
-    return (
-        <h2>Contact Page</h2>
-    )
+  return (
+    <>
+      <Header />
+      <h2>Contact Page</h2>
+    </>
+  );
 }

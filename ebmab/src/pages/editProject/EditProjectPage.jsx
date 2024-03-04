@@ -1,5 +1,10 @@
+import { Header } from "../../components/header/Header";
+
 export function EditProjectPage() {
-    return (
-        <h2>Edit Page</h2>
-    )
+  return (
+    <>
+      <Header />
+      <h2>Edit Page</h2>
+    </>
+  );
 }
