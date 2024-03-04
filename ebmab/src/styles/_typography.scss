@@ -15,3 +15,8 @@ $fwBold: 600;
     font-size: $fsBase;
     font-weight: $fwBold;
 }
+
+@mixin ctaFont {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}

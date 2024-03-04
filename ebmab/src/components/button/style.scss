@@ -1,0 +1,11 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.button {
+    @include ctaFont;
+    background-color: $primaryLightOrange;
+    padding: $padding $padding-huge;
+    color: $white;
+}
