@@ -1,3 +1,4 @@
+import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
 
 export function EditProjectPage() {
@@ -5,6 +6,7 @@ export function EditProjectPage() {
     <>
       <Header />
       <h2>Edit Page</h2>
+      <Footer />
     </>
   );
 }
