@@ -1,0 +1,10 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/reset';
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+    color: $secondaryOrange;
+}

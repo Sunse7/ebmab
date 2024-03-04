@@ -2,6 +2,7 @@
 
 $fsBase: 16px;
 $fwNormal: 400;
+$fwSemiBold: 500;
 $fwBold: 600;
 
 @mixin paragraphFont {
@@ -10,7 +11,7 @@ $fwBold: 600;
 }
 
 @mixin navigationFont {
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-size: $fsBase;
     font-weight: $fwBold;
 }
