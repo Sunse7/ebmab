@@ -8,7 +8,7 @@ $fwExtraBold: 800;
 
 @mixin paragraphFont {
     font-family: 'Roboto';
-    font-size: 20px;
+    font-size: calc($fsBase * 1.2);
 }
 
 @mixin navigationFont {
@@ -19,7 +19,7 @@ $fwExtraBold: 800;
 
 @mixin ctaFont {
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: calc($fsBase * 1.2);
 }
 
 @mixin titleFont {
