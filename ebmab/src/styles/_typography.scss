@@ -33,3 +33,8 @@ $fwExtraBold: 800;
     font-size: calc($fsBase * 2);
     font-weight: $fwBold;
 }
+
+@mixin paragraphFont {
+    font-family: 'Roboto', sans-serif;
+    font-size: $fsBase;
+}

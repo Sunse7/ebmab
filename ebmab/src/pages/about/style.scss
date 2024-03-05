@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.about {
+    background: url('./working.jpg'), rgba(0,0,0,0.2);
+    background-blend-mode: multiply;
+    padding: $padding-massive;
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    &__box {
+        width: 20vw;
+        background-color: $primaryDark;
+        padding: $padding-huge;
+        &--title {
+            @include subtitleFont;
+            color: $primaryLightOrange;
+            margin-bottom: $margin-large;
+        }
+        &--text {
+            @include paragraphFont;
+            color: $white;
+        }
+    }
+}
