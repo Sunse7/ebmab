@@ -4,10 +4,11 @@ $fsBase: 16px;
 $fwNormal: 400;
 $fwSemiBold: 500;
 $fwBold: 600;
+$fwExtraBold: 800;
 
 @mixin paragraphFont {
     font-family: 'Roboto';
-    font-size: 20px;
+    font-size: calc($fsBase * 1.2);
 }
 
 @mixin navigationFont {
@@ -18,5 +19,17 @@ $fwBold: 600;
 
 @mixin ctaFont {
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: calc($fsBase * 1.2);
+}
+
+@mixin titleFont {
+    font-family: 'Montserrat';
+    font-size: calc($fsBase * 4);
+    font-weight: $fwExtraBold;
+}
+
+@mixin subtitleFont {
+    font-family: 'Montserrat';
+    font-size: calc($fsBase * 2);
+    font-weight: $fwBold;
 }
