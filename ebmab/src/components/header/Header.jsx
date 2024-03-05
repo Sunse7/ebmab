@@ -8,7 +8,7 @@ export function Header() {
     <header className="header">
       <nav className="header__nav">
         <Link to='/' className="header__nav--logo">
-          <figure>Logo</figure>
+          <figure><img src="logo-mid.png" alt="Logo" /></figure>
         </Link>
         <section className="header__nav--links-container">
         <Link to="/projekt" className={location.pathname === '/projekt' ? 'active' : ''}>Projekt</Link>

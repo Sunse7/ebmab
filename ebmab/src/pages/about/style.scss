@@ -4,11 +4,12 @@
 @import '../../styles/reset';
 
 .about {
-    background: url('./working.jpg'), rgba(0,0,0,0.2);
+    background: url('./working.jpg') no-repeat, rgba(0,0,0,0.2);
+    background-size: cover;
+    background-position: center;
     background-blend-mode: multiply;
     padding: $padding-massive;
-    // display: grid;
-    // grid-template-columns: repeat(4, 1fr);
+    height: 65vh;
     &__box {
         width: 20vw;
         background-color: $primaryDark;
