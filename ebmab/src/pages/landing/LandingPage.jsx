@@ -3,6 +3,7 @@ import { Button } from "../../components/button/Button";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
 import './style.scss';
+import { Card } from "../../components/card/Card";
 
 export function LandingPage() {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ export function LandingPage() {
         </section>
         <section className="landing__service-section">
           <h3>Våra affärsområden</h3>
+          <Card src='./wall.JPG' alt='Concrete wall' text='Betonggjutning' />
         </section>
         <section className="landing__about-section"></section>
       </main>
