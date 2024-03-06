@@ -4,6 +4,7 @@ $fsBase: 16px;
 $fwNormal: 400;
 $fwSemiBold: 500;
 $fwBold: 600;
+$fwBolder: 700;
 $fwExtraBold: 800;
 
 @mixin paragraphFont {
@@ -31,7 +32,7 @@ $fwExtraBold: 800;
 @mixin subtitleFont {
     font-family: 'Montserrat';
     font-size: calc($fsBase * 2);
-    font-weight: $fwBold;
+    font-weight: $fwBolder;
 }
 
 @mixin paragraphFont {

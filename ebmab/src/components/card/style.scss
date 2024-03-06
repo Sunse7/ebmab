@@ -1,0 +1,13 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.card {
+    &__image {
+        width: 250px;
+    }
+    &__text {
+        @include ctaFont;
+    }
+}

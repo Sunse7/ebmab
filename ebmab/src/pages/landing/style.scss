@@ -1,0 +1,29 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.landing {
+    &__hero {
+        background: url('./truck.jpg'), rgba(0,0,0,0.5);
+        background-position: center 58%;
+        background-size: cover;
+        background-blend-mode: multiply;
+        min-height: 65vh;
+        padding: $padding-massive;
+        color: $white;
+        h2 {
+            @include titleFont;
+        }
+        h3 {
+            @include subtitleFont;
+            margin-bottom: $margin-huge;
+        }
+    }
+    &__service-section h3 {
+        @include subtitleFont;
+        text-align: center;
+        padding: $padding-massive;
+    }
+    &__about-section {}
+}
