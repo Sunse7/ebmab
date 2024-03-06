@@ -15,14 +15,14 @@ export function ContactPage() {
           <PhoneIcon />
           <section className="contact__phone--info">
             <h3>På telefon</h3>
-            <h3>0739-00 00 00</h3>
+            <h3>0706-99 18 21</h3>
           </section>
         </section>
         <section className="contact__visit">
           <PinIcon />
           <section className="contact__visit--info">
             <h3>Besök oss</h3>
-            <h3>Betonggatan 3, 451 54 Uddevalla</h3>
+            <h3>Prästebäcksvägen 4, 451 55 Uddevalla</h3>
           </section>
         </section>
         <section className="contact__mail">

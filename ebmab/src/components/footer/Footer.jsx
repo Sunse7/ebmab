@@ -7,8 +7,8 @@ export function Footer() {
     <footer className="footer">
       <section className="footer__info">
         <p>Kontakt</p>
-        <p>0739-00 00 00</p>
-        <p>Betonggatan 3 <br/> 451 54 Uddevalla</p>
+        <p>0706-99 18 21</p>
+        <p>Prästebäcksvägen 4 <br/> 451 55  Uddevalla</p>
         <p>anders@ebmab.se</p>
         <SocialMedia />
       </section>
