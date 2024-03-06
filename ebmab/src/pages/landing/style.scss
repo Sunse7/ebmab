@@ -5,9 +5,11 @@
 
 .landing {
     &__hero {
-        background: url('./solvik.jpg') center/cover, rgba(0,0,0,0.5);
+        background: url('./truck.jpg'), rgba(0,0,0,0.5);
+        background-position: center 58%;
+        background-size: cover;
         background-blend-mode: multiply;
-        min-height: 50vh;
+        min-height: 65vh;
         padding: $padding-massive;
         color: $white;
         h2 {

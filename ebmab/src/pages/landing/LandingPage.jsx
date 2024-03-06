@@ -13,7 +13,7 @@ export function LandingPage() {
       <main className="landing">
       <Header />
         <section className="landing__hero">
-          <h2>Betong & Markarbeten <br /> i Väst</h2>
+          <h2>Betong & Markarbeten <br /> på Västkusten</h2>
           <h3>Something företag sedan årtal</h3>
           <Button
             handleClick={() => navigate("/kontakt")}
