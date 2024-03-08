@@ -1,0 +1,15 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.project {
+    padding: $padding-massive;
+    &__title {
+        @include subtitleFont;
+        text-align: center;
+    }
+    &__card-container {
+        
+    }
+}
