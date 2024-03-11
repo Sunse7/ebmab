@@ -8,19 +8,16 @@ export function EditProjectPage() {
   const [text, setText] = useState();
 
   function handleImageUpload(img, text) {
-   
     const formData = new FormData();
     formData.append('image', img);
-    const body = {
-      image: formData, 
-      text: text
-    }
-    axios.post('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', body, {
+    // formData.append('text', text);
+    axios.post('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
-      }
+      },
     })
-    .then(res => console.log(res.data))
+    // .then(res => console.log(res.data))
+    .catch(err => console.error('Error uploading image: ', err));
   }
 
   return (
