@@ -5,6 +5,7 @@ provider:
   name: aws
   runtime: nodejs18.x
   deploymentMethod: direct
+  region: eu-north-1
   iam:
     role: arn:aws:iam::295392528210:role/EbmabRole
 

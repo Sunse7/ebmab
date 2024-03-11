@@ -1,15 +1,37 @@
+import { useState } from "react";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
+import axios from 'axios';
 
 export function EditProjectPage() {
+  const [image, setImage] = useState();
+  const [text, setText] = useState();
+
+  function handleImageUpload(img, text) {
+   
+    const formData = new FormData();
+    formData.append('image', img);
+    const body = {
+      image: formData, 
+      text: text
+    }
+    axios.post('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', body, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(res => console.log(res.data))
+  }
+
   return (
     <>
       <Header />
       <main className="project">
         <h2 className="project__title">Projekt</h2>
         <section className="project__add">
-          <input type="file" name="img" id="" />
-          <textarea name="img-text" id="" cols="30" rows="10"></textarea>
+          <input type="file" name="img" id="" onChange={(e) => setImage(e.target.files[0])}/>
+          <textarea name="img-text" id="" cols="30" rows="10" onChange={(e) => setText(e.target.value)}></textarea>
+        <button onClick={() => handleImageUpload(image, text)}>Lägg till bild</button>
         </section>
         <section className="project__card-container">
           
