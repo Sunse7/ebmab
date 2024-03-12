@@ -7,17 +7,26 @@ export function EditProjectPage() {
   const [image, setImage] = useState();
   const [text, setText] = useState();
 
-  function handleImageUpload(img, text) {
-    const formData = new FormData();
-    formData.append('image', img);
-    // formData.append('text', text);
-    axios.post('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', formData, {
+  async function handleImageUpload(img, text) {
+    const response = await fetch('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', {
+      method: 'POST',
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': img.type,
       },
+      body: img
     })
-    // .then(res => console.log(res.data))
-    .catch(err => console.error('Error uploading image: ', err));
+    console.log('response', response);
+    // console.log('type: ', img.type);
+    // const formData = new FormData();
+    // formData.append('image', img);
+    // formData.append('fileType', img.type);
+    // // formData.append('text', text);
+    // axios.post('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', formData, {
+    //   headers: {
+    //     'Content-Type': 'multipart/form-data'
+    //   },
+    // })
+    // .catch(err => console.error('Error uploading image: ', err));
   }
 
   return (
