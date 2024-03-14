@@ -5,11 +5,21 @@
 
 .project {
     padding: $padding-massive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     &__title {
         @include subtitleFont;
         text-align: center;
+        padding-bottom: $padding-massive;
     }
     &__card-container {
-        
+        width: 100%;
+        max-width: 80vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: $gap-huge;
+        align-items: center;
     }
 }
