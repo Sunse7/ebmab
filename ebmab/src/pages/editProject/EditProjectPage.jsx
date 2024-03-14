@@ -12,8 +12,10 @@ export function EditProjectPage() {
       return alert('Välj en bild');
     }
 
+    const encodedText = btoa(text); //Encode text to presserve å ä ö
+
     const headers = new Headers();
-    headers.append('text-data', text);
+    headers.append('text-data', encodedText); 
 
     const response = await fetch('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', {
       method: 'POST',

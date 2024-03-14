@@ -13,6 +13,7 @@ export async function handler(event) {
       : event.body;
     const contentType = event.headers?.["content-type"];
     const textData = event.headers?.["text-data"];
+    const text = atob(textData); //Decode text
     const id = uuidv4();
 
     const s3Command = new PutObjectCommand({
@@ -29,7 +30,7 @@ export async function handler(event) {
       Item: {
         id: id,
         url: `https://ebmab-bucket.s3.eu-north-1.amazonaws.com/${id}`,
-        text: textData,
+        text: text,
       },
     });
 
