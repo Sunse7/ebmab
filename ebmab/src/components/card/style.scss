@@ -5,9 +5,16 @@
 
 .card {
     &__image {
-        width: 250px;
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
+       height: 300px;
+       
     }
     &__text {
         @include ctaFont;
+    }
+    button {
+        background-color: transparent;
     }
 }

@@ -8,6 +8,7 @@ export async function handler() {
             TableName: "imageDb"
         });
         const response = await docClient.send(command);
+
         return SendResponse(200, {success: true, images: response.Items});
     } catch (err) {
         return SendResponse(err.statusCode, {

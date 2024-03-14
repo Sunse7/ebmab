@@ -1,11 +1,23 @@
 import { useState } from "react";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
+import { Button } from '../../components/button/Button';
+import { Card } from '../../components/card/Card';
+import { useEffect } from "react";
 import axios from 'axios';
+import './style.scss';
 
 export function EditProjectPage() {
   const [image, setImage] = useState();
   const [text, setText] = useState();
+  const [images, setImages] = useState();
+
+  useEffect(() => {
+    axios.get('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/images')
+    .then(res => setImages(res.data.images))
+    .catch(err => console.error('Error getting images', err));
+
+  }, [images]);
 
   async function handleImageUpload(img, text) {
     if (!setImage) {
@@ -17,37 +29,31 @@ export function EditProjectPage() {
     const headers = new Headers();
     headers.append('text-data', encodedText); 
 
-    const response = await fetch('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', {
+    await fetch('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', {
       method: 'POST',
       headers,
       body: img
-    })
-    console.log('response', response);
-    // console.log('type: ', img.type);
-    // const formData = new FormData();
-    // formData.append('image', img);
-    // formData.append('fileType', img.type);
-    // // formData.append('text', text);
-    // axios.post('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', formData, {
-    //   headers: {
-    //     'Content-Type': 'multipart/form-data'
-    //   },
-    // })
-    // .catch(err => console.error('Error uploading image: ', err));
+    });   
+  }
+
+  async function handleDelete() {
+
   }
 
   return (
     <>
       <Header />
-      <main className="project">
-        <h2 className="project__title">Projekt</h2>
-        <section className="project__add">
-          <input type="file" name="img" id="" onChange={(e) => setImage(e.target.files[0])}/>
-          <textarea name="img-text" id="" cols="30" rows="10" onChange={(e) => setText(e.target.value)}></textarea>
-        <button onClick={() => handleImageUpload(image, text)}>Lägg till bild</button>
+      <main className="edit">
+        <h2 className="edit__title">Lägg till projekt</h2>
+        <section className="edit__add">
+          <input type="file" name="img" id="img" onChange={(e) => setImage(e.target.files[0])}/>
+          <textarea name="img-text" id="" cols="30" rows="5" placeholder="Skriv en rad om projektet" onChange={(e) => setText(e.target.value)}></textarea>
+        <Button handleClick={() => handleImageUpload(image, text)} text='Skicka' />
         </section>
-        <section className="project__card-container">
-          
+        <section className="edit__card-container">
+          {
+            images && images.map((image, i) => <Card key={i} data={image} isEdit={true} onClick={handleDelete}/>)
+          }
         </section>
       </main>
       <Footer />
