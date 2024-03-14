@@ -8,11 +8,16 @@ export function EditProjectPage() {
   const [text, setText] = useState();
 
   async function handleImageUpload(img, text) {
+    if (!setImage) {
+      return alert('Välj en bild');
+    }
+
+    const headers = new Headers();
+    headers.append('text-data', text);
+
     const response = await fetch('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', {
       method: 'POST',
-      headers: {
-        'Content-Type': img.type,
-      },
+      headers,
       body: img
     })
     console.log('response', response);
