@@ -6,6 +6,7 @@ import { Card } from '../../components/card/Card';
 import { useEffect } from "react";
 import axios from 'axios';
 import './style.scss';
+import { json } from "react-router-dom";
 
 export function EditProjectPage() {
   const [image, setImage] = useState();
@@ -17,7 +18,7 @@ export function EditProjectPage() {
     .then(res => setImages(res.data.images))
     .catch(err => console.error('Error getting images', err));
 
-  }, [images]);
+  }, []);
 
   async function handleImageUpload(img, text) {
     if (!setImage) {
@@ -29,15 +30,28 @@ export function EditProjectPage() {
     const headers = new Headers();
     headers.append('text-data', encodedText); 
 
-    await fetch('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', {
+     const response = await fetch('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', {
       method: 'POST',
       headers,
       body: img
     });   
+    console.log('Response: ', response);
+    // const data = await response.text();
   }
 
-  async function handleDelete() {
+  async function handleDelete(id) {
+    console.log('Clicked');
+    // axios.delete('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', id)
+    try {
+      const response = await fetch('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', {
+        method: 'DELETE',
+        body: JSON.stringify({ id: id })
+      });
 
+      console.log('Response: ', await response.json());
+    } catch (err) {
+      console.error('Error: ', err);
+    }
   }
 
   return (
@@ -52,7 +66,7 @@ export function EditProjectPage() {
         </section>
         <section className="edit__card-container">
           {
-            images && images.map((image, i) => <Card key={i} data={image} isEdit={true} onClick={handleDelete}/>)
+            images && images.map((image, i) => <Card key={i} data={image} isEdit={true} onClick={() => handleDelete(image.id)}/>)
           }
         </section>
       </main>

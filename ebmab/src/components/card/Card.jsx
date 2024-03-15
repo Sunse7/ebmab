@@ -2,6 +2,7 @@ import { TrashIcon } from '../icons/TrashIcon';
 import "./style.scss";
 
 export function Card({ data, onClick, isEdit }) {
+  // console.log('data', data);
   return (
     data && (
       <section className="card">
