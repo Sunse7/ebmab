@@ -7,7 +7,7 @@
     @include subtitleFont;
     text-shadow: $shadow;
     color: $white;
-    background: url('./concrete.jpg'), rgba(0,0,0,0.5);
+    background: url('/concrete.jpg'), rgba(0,0,0,0.5);
     background-blend-mode: multiply;
     display: flex;
     flex-direction: column;
