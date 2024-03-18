@@ -3,22 +3,27 @@
 @import '../../styles/typography';
 @import '../../styles/reset';
 
-.contact {
-    @include subtitleFont;
-    text-shadow: $shadow;
-    color: $white;
-    background: url('./concrete.jpg'), rgba(0,0,0,0.5);
-    background-blend-mode: multiply;
+.contact-page {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: $gap-huge;
-    padding: $padding-massive;
-    h2 {
-        @include titleFont;
-    }
-    &__phone, &__visit, &__mail {
+    .contact {
+        flex: 1;
+        @include subtitleFont;
+        text-shadow: $shadow;
+        color: $white;
+        @include background('/concrete.jpg', rgba(0,0,0,0.5));
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: $gap-huge;
+        padding: $padding-massive;
+        h2 {
+            @include titleFont;
+        }
+        &__phone, &__visit, &__mail {
+            display: flex;
+            align-items: center;
+            gap: $gap-huge;
+        }
     }
 }

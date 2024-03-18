@@ -4,7 +4,7 @@ import "./style.scss";
 
 export function AboutPage() {
   return (
-    <>
+    <section className="about-page">
       <Header />
       <main className="about">
         <section className="about__box">
@@ -21,6 +21,6 @@ export function AboutPage() {
         </section>
       </main>
       <Footer />
-    </>
+    </section>
   );
 }

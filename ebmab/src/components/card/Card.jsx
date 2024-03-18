@@ -1,8 +1,8 @@
-import { TrashIcon } from '../icons/TrashIcon';
+import { TrashIcon } from "../icons/TrashIcon";
 import "./style.scss";
 
 export function Card({ data, onClick, isEdit }) {
-  // console.log('data', data);
+  //max 120 char?
   return (
     data && (
       <section className="card">
@@ -10,10 +10,14 @@ export function Card({ data, onClick, isEdit }) {
           className="card__image"
           style={{ backgroundImage: `url('${data.url}')` }}
         ></figure>
-        <p className="card__text">{data.text}</p>
-        {
-          isEdit && <button onClick={onClick}><TrashIcon /></button>
-        }
+        <section className="card__info">
+          <p className="card__info--text">{data.text}</p>
+          {isEdit && (
+            <button onClick={onClick}>
+              <TrashIcon />
+            </button>
+          )}
+        </section>
       </section>
     )
   );
