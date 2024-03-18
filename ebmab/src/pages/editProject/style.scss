@@ -3,34 +3,40 @@
 @import "../../styles/typography";
 @import "../../styles/reset";
 
-.edit {
-  padding: $padding-massive;
+.edit-page {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  &__title {
-    @include subtitleFont;
-    text-align: center;
-  }
-  &__add {
+  .edit {
+    flex: 1;
+    padding: $padding-massive;
     display: flex;
     flex-direction: column;
-    gap: $gap;
-    padding: $padding-huge 0;
-    input {
-        margin-left: auto;
+    align-items: center;
+    &__title {
+      @include subtitleFont;
+      text-align: center;
     }
-    textarea {
-      @include paragraphFont;
-      border: 1px solid black;
+    &__add {
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+      padding: $padding-huge 0;
+      input {
+          margin-left: auto;
+      }
+      textarea {
+        @include paragraphFont;
+        border: 1px solid black;
+      }
     }
-  }
-  &__card-container {
-    width: 100%;
-    max-width: 80vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: $gap-huge;
-    align-items: start;
+    &__card-container {
+      width: 100%;
+      max-width: 80vw;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(21.8, 1fr));
+      gap: $gap-huge;
+      align-items: start;
+    }
   }
 }

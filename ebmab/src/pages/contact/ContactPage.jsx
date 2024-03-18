@@ -7,7 +7,7 @@ import "./style.scss";
 
 export function ContactPage() {
   return (
-    <>
+    <section className="contact-page">
       <Header />
       <main className="contact">
         <h2>Välkommen att kontakta oss</h2>
@@ -34,6 +34,6 @@ export function ContactPage() {
         </section>
       </main>
       <Footer />
-    </>
+    </section>
   );
 }

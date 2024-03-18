@@ -6,7 +6,6 @@ import { Card } from "../../components/card/Card";
 import { useEffect } from "react";
 import axios from "axios";
 import "./style.scss";
-import { json } from "react-router-dom";
 
 export function EditProjectPage() {
   const [image, setImage] = useState();
@@ -56,7 +55,7 @@ export function EditProjectPage() {
   }
 
   return (
-    <>
+    <section className="edit-page">
       <Header />
       <main className="edit">
         <h2 className="edit__title">Lägg till projekt</h2>
@@ -93,6 +92,6 @@ export function EditProjectPage() {
         </section>
       </main>
       <Footer />
-    </>
+    </section>
   );
 }

@@ -17,7 +17,7 @@ export function ProjectPage() {
 
   console.log('images', images);
   return (
-    <>
+    <section className="project-page">
       <Header />
       <main className="project">
         <h2 className="project__title">Projekt</h2>
@@ -28,6 +28,6 @@ export function ProjectPage() {
         </section>
       </main>
       <Footer />
-    </>
+    </section>
   );
 }
