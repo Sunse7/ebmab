@@ -7,11 +7,6 @@ $fwBold: 600;
 $fwBolder: 700;
 $fwExtraBold: 800;
 
-@mixin paragraphFont {
-    font-family: 'Roboto';
-    font-size: calc($fsBase * 1.2);
-}
-
 @mixin navigationFont {
     font-family: 'Montserrat';
     font-size: $fsBase;
