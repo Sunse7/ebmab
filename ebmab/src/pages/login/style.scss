@@ -6,6 +6,12 @@
 .login-page {
     min-height: 80vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: $gap-large;
+    .error {
+        @include paragraphFont;
+        color: $error;
+    }
 }

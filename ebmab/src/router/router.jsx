@@ -5,6 +5,7 @@ import { EditProjectPage } from '../pages/editProject/EditProjectPage';
 import { AboutPage } from '../pages/about/AboutPage';
 import { ContactPage } from '../pages/contact/ContactPage';
 import { LoginPage } from '../pages/login/LoginPage';
+import { PriveteRoute } from './PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/projekt/redigera',
-        element: <EditProjectPage />
+        element: <PriveteRoute><EditProjectPage /></PriveteRoute>
     },
     {
         path: '/om-oss',
