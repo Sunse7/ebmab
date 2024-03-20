@@ -11,6 +11,7 @@ export function EditProjectPage() {
   const [image, setImage] = useState();
   const [text, setText] = useState();
   const [images, setImages] = useState();
+  const [responseText, setResponseText] = useState(false);
 
   useEffect(() => {
     axios
@@ -25,11 +26,13 @@ export function EditProjectPage() {
     }
 
     const encodedText = btoa(text); //Encode text to presserve å ä ö
+    const token = localStorage.getItem('jwtToken');
 
     const headers = new Headers();
     headers.append("text-data", encodedText);
+    headers.append("Authorization", `Bearer ${token}`);
 
-    await fetch(
+    const response = await fetch(
       "https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image",
       {
         method: "POST",
@@ -37,10 +40,14 @@ export function EditProjectPage() {
         body: img,
       }
     );
+    if (!response.ok) {
+      setResponseText(<p className="error">Något gick fel vid uppladdningen,<br /> testa logga in igen</p>);
+    } else if (response.ok) {
+      setResponseText(<p className="response">Din bild är nu uppladdad</p>)
+    }
   }
 
   async function handleDelete(id) {
-    // axios.delete('https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image', id)
     try {
       await fetch(
         "https://ijdn7kor92.execute-api.eu-north-1.amazonaws.com/image",
@@ -78,6 +85,7 @@ export function EditProjectPage() {
             handleClick={() => handleImageUpload(image, text)}
             text="Skicka"
           />
+          { responseText }
         </section>
         <section className="edit__card-container">
           {images &&
