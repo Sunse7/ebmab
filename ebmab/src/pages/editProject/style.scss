@@ -39,4 +39,11 @@
       align-items: start;
     }
   }
+  .error {
+    @include paragraphFont;
+    color: $error;
+  }
+  .response {
+    @include paragraphFont;
+  }
 }
