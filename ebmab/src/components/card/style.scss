@@ -17,11 +17,14 @@
         &--text {
             @include ctaFont;
             max-width: 40ch;
+            overflow-wrap: break-word;
+
         }
         button {
             background-color: transparent;
             margin: 0 0 auto auto;
             min-width: fit-content;
+            padding: 0;
         }
     }
 }

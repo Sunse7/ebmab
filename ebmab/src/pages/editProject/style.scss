@@ -23,7 +23,7 @@
       gap: $gap;
       padding: $padding-huge 0;
       input {
-          margin-left: auto;
+        margin-left: auto;
       }
       textarea {
         @include paragraphFont;
@@ -37,6 +37,14 @@
       grid-template-columns: repeat(auto-fit, minmax(21.8rem, 1fr));
       gap: $gap-huge;
       align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      padding: $padding;
+
+      &__card-container {
+        grid-template-columns: unset;
+      }
     }
   }
   .error {

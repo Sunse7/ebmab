@@ -25,5 +25,19 @@
                 color: $white;
             }
         }
+
+        @media (max-width: 768px) {
+            padding: $padding;
+            &__box {
+                width: 40vw;
+                padding: $padding;
+            }
+        }
+        @media (max-width: 480px) {
+            &__box {
+                width: auto;
+                margin-top: $margin-large;
+            }
+        }
     }
 }
