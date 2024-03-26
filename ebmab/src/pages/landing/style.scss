@@ -1,42 +1,69 @@
-@import '../../styles/colors';
-@import '../../styles/variables';
-@import '../../styles/typography';
-@import '../../styles/reset';
+@import "../../styles/colors";
+@import "../../styles/variables";
+@import "../../styles/typography";
+@import "../../styles/reset";
 
 .landing {
-    &__hero {
-        @include background('/truck.jpg', rgba(0,0,0,0.5), center 58%);
-        min-height: 65vh;
-        padding: $padding-massive;
-        color: $white;
-        h2 {
-            @include titleFont;
-        }
-        h3 {
-            @include subtitleFont;
-            margin-bottom: $margin-huge;
-        }
+  &__hero {
+    @include background("/truck.jpg", rgba(0, 0, 0, 0.5), center 58%);
+    min-height: 65vh;
+    padding: $padding-massive;
+    color: $white;
+    h2 {
+      @include titleFont;
     }
-    &__service-section h3 {
-        @include subtitleFont;
+    h3 {
+      @include subtitleFont;
+      margin-bottom: $margin-huge;
+    }
+  }
+  &__service-section {
+    padding: $padding-massive;
+    h3 {
+      @include subtitleFont;
+      text-align: center;
+      padding-bottom: $padding-massive;
+    }
+    &--img-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(21.8rem, 1fr));
+      gap: $gap-huge;
+      figure {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 18.75rem;
+      }
+      p {
         text-align: center;
-        padding: $padding-massive;
+        @include ctaFont;
+        font-weight: $fwBold;
+        color: $primaryLightOrange;
+        margin-bottom: $margin-sml;
+      }
     }
-    &__about-section {}
+  }
+  &__about-section {
+  }
 
-    @media (max-width: 768px) {
-        &__hero {
-            padding: $padding-massive $padding;
-            h2 {
-                @include subtitleFont;
-            }
-            h3 {
-                @include subtitleFont-sml;
-            }
-        }
-        &__service-section h3{
-            @include subtitleFont-sml;
-            padding: $padding-massive $padding;
-        }
+  @media (max-width: 768px) {
+    &__hero {
+      padding: $padding-massive $padding;
+      h2 {
+        @include subtitleFont;
+      }
+      h3 {
+        @include subtitleFont-sml;
+      }
     }
+    &__service-section {
+      padding: $padding-massive $padding;
+      h3 {
+        @include subtitleFont-sml;
+      }
+      &--img-container {
+        grid-template-columns: unset;
+      }
+    }
+  }
 }

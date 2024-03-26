@@ -10,13 +10,13 @@ export function AboutPage() {
         <section className="about__box">
           <h3 className="about__box--title">Om oss</h3>
           <p className="about__box--text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Erikssons Betong och Mark AB grundades 2002, i nuläget är vi 11
+            anställda i bolaget. <br /> Vi utför allt från transporter, markarbeten,
+            formning, armering, gjutning, mönsterbetong, industrigrunder och
+            husgrunder. <br /> I alla våra verksamma år har hög kvalitet på våra
+            utförda arbeten varit våran ambition, vilket har resulterat i en
+            stor kundkrets med många återkommande kunder. Både privatpersoner
+            och byggbolag, stora som små.
           </p>
         </section>
       </main>
