@@ -25,5 +25,16 @@
             align-items: center;
             gap: $gap-huge;
         }
+
+        @media (max-width: 768px) {
+            padding: $padding-massive $padding;
+            @include subtitleFont-sml;
+            h2 {
+                @include subtitleFont;
+            }
+            svg {
+                min-width: 30px;
+            }
+        }
     }
 }

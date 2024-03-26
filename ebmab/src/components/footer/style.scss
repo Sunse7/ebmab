@@ -20,4 +20,8 @@
     &__additional {
         margin-top: auto;
     }
+
+    @media (max-width: 768px) {
+        padding: $padding;
+    }
 }

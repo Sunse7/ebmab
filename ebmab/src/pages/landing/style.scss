@@ -23,4 +23,20 @@
         padding: $padding-massive;
     }
     &__about-section {}
+
+    @media (max-width: 768px) {
+        &__hero {
+            padding: $padding-massive $padding;
+            h2 {
+                @include subtitleFont;
+            }
+            h3 {
+                @include subtitleFont-sml;
+            }
+        }
+        &__service-section h3{
+            @include subtitleFont-sml;
+            padding: $padding-massive $padding;
+        }
+    }
 }
