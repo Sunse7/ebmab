@@ -1,0 +1,30 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.card {
+    &__image {
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
+       height: 18.75rem;
+       
+    }
+    &__info {
+        display: flex;
+        
+        &--text {
+            @include ctaFont;
+            max-width: 40ch;
+            overflow-wrap: break-word;
+
+        }
+        button {
+            background-color: transparent;
+            margin: 0 0 auto auto;
+            min-width: fit-content;
+            padding: 0;
+        }
+    }
+}

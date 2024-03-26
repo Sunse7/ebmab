@@ -1,0 +1,43 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.about-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .about {
+        flex: 1;
+        @include background('/working.jpg', rgba(0,0,0,0.3));
+        padding: $padding-massive;
+        &__box {
+            width: 20vw;
+            background-color: $primaryDark;
+            padding: $padding-huge;
+            &--title {
+                @include subtitleFont;
+                color: $primaryLightOrange;
+                margin-bottom: $margin-large;
+            }
+            &--text {
+                @include paragraphFont;
+                color: $white;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding: $padding;
+            &__box {
+                width: 40vw;
+                padding: $padding;
+            }
+        }
+        @media (max-width: 480px) {
+            &__box {
+                width: auto;
+                margin-top: $margin-large;
+            }
+        }
+    }
+}

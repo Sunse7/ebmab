@@ -1,0 +1,40 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .contact {
+        flex: 1;
+        @include subtitleFont;
+        text-shadow: $shadow;
+        color: $white;
+        @include background('/concrete.jpg', rgba(0,0,0,0.5));
+        display: flex;
+        flex-direction: column;
+        gap: $gap-huge;
+        padding: $padding-massive;
+        h2 {
+            @include titleFont;
+        }
+        &__phone, &__visit, &__mail {
+            display: flex;
+            align-items: center;
+            gap: $gap-huge;
+        }
+
+        @media (max-width: 768px) {
+            padding: $padding-massive $padding;
+            @include subtitleFont-sml;
+            h2 {
+                @include subtitleFont;
+            }
+            svg {
+                min-width: 30px;
+            }
+        }
+    }
+}

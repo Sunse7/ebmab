@@ -1,0 +1,27 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/typography';
+@import '../../styles/reset';
+
+.footer {
+    background-color: $primaryDark;
+    padding: $padding-huge $padding-massive;
+    display: flex;
+    @include navigationFont;
+    color: $primaryLightOrange;
+    display: flex;
+    justify-content: space-between;
+
+    &__info, p {
+        display: flex;
+        flex-direction: column;
+        gap: $gap-sml;
+    }
+    &__additional {
+        margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+        padding: $padding;
+    }
+}

@@ -1,0 +1,75 @@
+service: server
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  deploymentMethod: direct
+  region: eu-north-1
+  iam:
+    role: arn:aws:iam::295392528210:role/EbmabRole
+
+plugins:
+  - serverless-webpack
+
+package: 
+  individually: true
+
+functions:
+  getImageCards:
+    handler: functions/imageFunctions/getImageCards/index.handler
+    events:
+      - httpApi:
+          path: /images
+          method: get
+  addImageCard:
+    handler: functions/imageFunctions/addImageCard/index.handler
+    events:
+      - httpApi:
+          path: /image
+          method: post
+  deleteImageCard:
+    handler: functions/imageFunctions/deleteImageCard/index.handler
+    events:
+      - httpApi:
+          path: /image
+          method: delete
+  createUser:
+    handler: functions/userFunctions/createUser/index.handler
+    events:
+      - httpApi:
+          path: /user/create
+          method: post
+  findUser:
+    handler: functions/userFunctions/findUser/index.handler
+    events:
+      - httpApi:
+          path: /user
+          method: post
+
+resources:
+  Resources:
+    imageDb:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: imageDb
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+    userDb:
+          Type: AWS::DynamoDB::Table
+          Properties:
+            TableName: userDb
+            AttributeDefinitions:
+              - AttributeName: email
+                AttributeType: S
+            KeySchema:
+              - AttributeName: email
+                KeyType: HASH
+            BillingMode: PAY_PER_REQUEST
+
+

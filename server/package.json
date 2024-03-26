@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.529.1",
+    "@aws-sdk/client-s3": "^3.529.1",
+    "@aws-sdk/lib-dynamodb": "^3.529.1",
+    "jsonwebtoken": "^9.0.2",
+    "serverless-webpack": "^5.13.0",
+    "uuid": "^9.0.1"
+  }
+}

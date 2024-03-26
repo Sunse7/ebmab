@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$fsBase: 16px;
+$fwNormal: 400;
+$fwSemiBold: 500;
+$fwBold: 600;
+$fwBolder: 700;
+$fwExtraBold: 800;
+
+@mixin navigationFont {
+    font-family: 'Montserrat';
+    font-size: $fsBase;
+    font-weight: $fwBold;
+}
+
+@mixin ctaFont {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc($fsBase * 1.2);
+}
+
+@mixin titleFont {
+    font-family: 'Montserrat';
+    font-size: calc($fsBase * 4);
+    font-weight: $fwExtraBold;
+}
+
+@mixin subtitleFont {
+    font-family: 'Montserrat';
+    font-size: calc($fsBase * 2);
+    font-weight: $fwBolder;
+}
+
+@mixin paragraphFont {
+    font-family: 'Roboto', sans-serif;
+    font-size: $fsBase;
+}
+
+@mixin subtitleFont-sml {
+    font-family: 'Montserrat';
+    font-size: calc($fsBase * 1.2);
+    font-weight: $fwBolder;
+}
